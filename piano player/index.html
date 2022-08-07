@@ -12,6 +12,7 @@
 <body>
   <!-- <p id="midtext" > Select the song and play along </p> -->
   <div class="container">
+    <div id = 'visibility'>
     <div class="piano">
       <button class="white-key C4-key"><span class="keyNote">Q <br> c4 </span></button>
       <button class="black-key Db4-key"><span class="keyNote">2 <br> Db4 </span></button>
@@ -31,25 +32,37 @@
       <button class="black-key Eb5-key"><span class="keyNote">0 <br> Eb5 </span></button>
       <button class="white-key E5-key"><span class="keyNote">P <br> E5 </span></button>
     </div>
-    
-    <div class="dropdown">
-      <button class="dropbtn">Happy Birthday &nbsp; ▽</button>
-      <div class="dropdown-content">
-      <button onclick="reveal()" id="demo1" class="btnConfig" >Happy Birthday </button>
-      <button onclick="reveal()" id="demo2" class="btnConfig">Twinkle Star  </button>
-      <button onclick="reveal()" id="demo3" class="btnConfig">Jingle Bells </button>
-      <button onclick="reveal()" id="demo4" class="btnConfig">Ring Around The Rosie </button>
 
-        <hr>
-        <span id="seek-obj-container">
-          <progress id="seek-obj" value="0" max="100"></progress>
-        </span>
-    
-        <small class="start-time"></small>
-        <small class="end-time"></small>
-      </div>
+  </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Choose&nbsp; ▽</button>
+    <div class="dropdown-content">
+    <button onclick="vis()" id="demo1" class="btnConfig" >Happy Birthday </button>
+    <button onclick="vis()" id="demo2" class="btnConfig">Twinkle Star  </button>
+    <button onclick="vis()" id="demo3" class="btnConfig">Jingle Bells </button>
+    <button onclick="vis()" id="demo4" class="btnConfig">Ring Around The Rosie </button>
+
+      <hr>
+      <span id="seek-obj-container">
+        <progress id="seek-obj" value="0" max="100"></progress>
+      </span>
+  
+      <small class="start-time"></small>
+      <small class="end-time"></small>
     </div>
   </div>
+  <script>
+
+    function vis() {
+      var x = document.getElementById('visibility');
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    </script>
   
   <script type="text/javascript" src="js/seekbar.js"> </script>
   <script type="text/javascript" src="js/song.js"> </script>
